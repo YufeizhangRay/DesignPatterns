@@ -17,7 +17,7 @@ public class LazyOne {
 	// 将该实例缓存好
 	public static LazyOne getInstance() {
 		if (lazyOne == null) {
-			// 两个线程都会进入这个if里面
+			// 两个线程都会进入这个if里面，存在线程安全问题
 			lazyOne = new LazyOne();
 		}
 		// 如果已经初始化，直接返回之前已经保存好的结果
