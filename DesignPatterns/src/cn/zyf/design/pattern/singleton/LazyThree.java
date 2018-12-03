@@ -7,6 +7,7 @@ package cn.zyf.design.pattern.singleton;
  * 巧妙地避免了线程安全问题
  * 这种形式兼顾饿汉式的内存浪费，也兼顾synchronized性能问题
  * 完美地屏蔽了这两个缺点
+ * 但是也依然无法阻止反射打破单例约束
  */
 public class LazyThree {
 	
