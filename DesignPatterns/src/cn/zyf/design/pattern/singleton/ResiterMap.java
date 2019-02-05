@@ -5,22 +5,20 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ResiterMap {
 
+	private static String name;
+	
 	private ResiterMap() {
 		
 	}
 	
 	private static Map<String, Object> register = new ConcurrentHashMap<String, Object>();
 	
-	public static ResiterMap getInstance(String name) {
+	public static ResiterMap getInstance() {
 		if(name == null) {
 			name = ResiterMap.class.getName();
 		}
 		if(register.get(name)==null) {
-			try {
-				register.put(name, new ResiterMap());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			register.put(name, new ResiterMap());
 		}
 		return (ResiterMap) register.get(name);
 	}
